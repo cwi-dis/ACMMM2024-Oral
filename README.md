@@ -104,6 +104,6 @@ If you find our code useful code please cite the paper
   booktitle={ACM Multimedia 2024}
 }
 ```
-If there are any problem about the code and the dataset, please contact xuemei.zhou@cwi.nl
+If you encounter any issues with the code or training dataset, please contact xuemei.zhou@cwi.nl
 # Rerference
 [1]Lazzarotto, D., Testolina, M., & Ebrahimi, T. (2024). Subjective performance evaluation of bitrate allocation strategies for MPEG and JPEG Pleno point cloud compression. EURASIP Journal on Image and Video Processing , 2024 (1).
