@@ -55,7 +55,6 @@ python -u train.py \
 
  **The training data of the projections and patches, will be accessed soon.**  
 
-<If you want to generate the patches (position, normal and texture) and projections (depth, normal, and texture) by yourself, you can simply refer to 'utils/get_patch.py' and 'utils/get_projections.py' for help.>
 # Example Visualization
 <p align="left">
   <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/unicorn_mos.jpg" /> 
