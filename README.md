@@ -88,12 +88,15 @@ In this paper, we re-define that any combination of 2D and 3D can compose a text
 Hence we have the following results:
 <p align="left">
   <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/Average_Ranking.png" /> 
-</p>
+</p>  
+
+# Future Work
+However, each assumption needs to be verified by subjective studies[1]. The simplest assumption is that we just remove the least important associations, and then we solve 4 variables. 
 
 
 # Bibtex 
 -----------
-If you find our code is useful code please cite the paper   
+If you find our code useful code please cite the paper   
 ```
 @inproceedings{zhou2024deciphering,
   title={Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?},
@@ -102,3 +105,5 @@ If you find our code is useful code please cite the paper
 }
 ```
 If there are any problem about the code and the dataset, please contact xuemei.zhou@cwi.nl
+# Rerference
+[1]Lazzarotto, D., Testolina, M., & Ebrahimi, T. (2024). Subjective performance evaluation of bitrate allocation strategies for MPEG and JPEG Pleno point cloud compression. EURASIP Journal on Image and Video Processing , 2024 (1).
