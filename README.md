@@ -64,16 +64,26 @@ python -u train.py \
 <p align="center">
   <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/ranking_4_datasets.jpg" /> 
 </p>
-**The most interesting part is by this framework design, we can gain some insights about how the association of texture and geometry impacts the final quality, instead of running an extensive subjective study for point cloud quality assessment, we can estimate the relationship by M3-Unity.**  We have 4 modalities, 6 associations, and we have 6 equations. However, if we want to dereive the relationship of the 4 modalities, either we remove two redudent equations or we have more variables.
+**The most interesting part is by this framework design, we can gain some insights about how the association of texture and geometry impacts the final quality, instead of running an extensive subjective study for point cloud quality assessment, we can estimate the relationship by M3-Unity.**  We have 4 modalities, 6 associations, and we have 6 equations. However, if we want to dereive the relationship of the 4 modalities, either we remove two redudent equations or we have more variables.  
+
 (𝑇_2𝐷 • 𝐺_2𝐷)= A  
-(𝑇_3𝐷 • 𝐺_3𝐷)= B  
-(𝑇_2𝐷 • 𝑇_3𝐷)= C  
-(𝑇_2𝐷 • 𝐺_3𝐷)= D  
+
+(𝑇_3𝐷 • 𝐺_3𝐷)= B 
+
+(𝑇_2𝐷 • 𝑇_3𝐷)= C
+
+(𝑇_2𝐷 • 𝐺_3𝐷)= D
+
 (𝐺_2𝐷 • 𝑇_3𝐷)= E  
+
 (𝐺_2𝐷 • 𝐺_3𝐷)= F  
-In this paper, we re-define that any combination of 2D and 3D can compose a texture, the same for geometry, which is:
+
+In this paper, we re-define that any combination of 2D and 3D can compose a texture, the same for geometry, which is:  
+
 (𝑇_2𝐷,𝑇_3𝐷)=𝑇^′  
+
 (𝐺_2𝐷,𝐺_3𝐷 )=𝐺′
+
 Hence we have the following results:
 <p align="left">
   <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/Average_Ranking.png" /> 
