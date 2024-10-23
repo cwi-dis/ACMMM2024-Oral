@@ -23,9 +23,9 @@ local and global associations at both the intra- and inter-modality perception. 
 ## Environment Build
 
 We train and test the code on the Ubuntu 18.04 platform with open3d and python=3.7. 
-'''
+```
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
-'''
+```
 The GPU is A100 with 48 GB memory,  batchsize = 4.
 
 ## Begin training
