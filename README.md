@@ -3,7 +3,7 @@ Official repo for '[Deciphering Perceptual Quality in Colored Point Cloud: Prior
 
 ## Motivation
 
-<img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/motivation.pdf" align="left" />
+<img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/motivation.jpg" align="left" />
 
 Point clouds represent one of the prevalent formats for 3D content. Distortions introduced at various stages in the point cloud processing pipeline affect the visual quality, altering their geometric composition, texture information, or both. Understanding and quantifying the impact of the distortion domain on visual quality is vital for driving rate optimization and guiding post-processing steps to improve the quality of experience. In this paper, we propose a multi-task guided multi-modality no reference metric (M3-Unity), which utilizes 4 types of modalities across attributes and dimensionalities to represent point clouds. An attention mechanism establishes inter/intra associations among 3D/2D patches, which can complement each other, yielding local and global features, to fit the highly nonlinear property of the human vision system. A
 multi-task decoder involving distortion-type classification selects the best association among 4 modalities, aiding the regression task and enabling the in-depth analysis of the interplay between geometrical and textural distortions. Furthermore, our framework design and attention strategy enable us to measure the impact of individual attributes and their combinations, providing insights into how these associations contribute particularly in relation to distortion type. Extensive experimental results on 4 datasets consistently outperform the state-of-the-art metrics by a large margin.
@@ -12,13 +12,13 @@ multi-task decoder involving distortion-type classification selects the best ass
 ## Framework
 
 <p align="center">
-  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/framework.pdf" /> 
+  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/framework.jpg" /> 
 </p>
 
 First, we preprocess the colored point cloud and extract multimodal features with 3D and 2D encoders, respectively. Second, we introduce the cross-attributes attentive fusion module, which captures the
 local and global associations at both the intra- and inter-modality perception. Last, we employ dual decoders to jointly learn both quality regression and distortion-type classification. The design for this framework is for further analysis, and we have separated the modality and associations to measure the individual contribution to the visual quality.
 
-# How to run the code 🌟🌟🌟
+# How to run the code 
 
 ## Environment Build
 
@@ -58,12 +58,12 @@ python -u train.py \
 <If you want to generate the patches (position, normal and texture) and projections (depth, normal, and texture) by yourself, you can simply refer to 'utils/get_patch.py' and 'utils/get_projections.py' for help.>
 # Example Visualization
 <p align="left">
-  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/unicorn_mos.pdf" /> 
+  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/unicorn_mos.jpg" /> 
 </p>
 
 # Anlysis
 <p align="center">
-  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/ranking_4_datasets.pdf" /> 
+  <img src="https://github.com/cwi-dis/ACMMM2024-Oral/blob/main/imgs/ranking_4_datasets.jpg" /> 
 </p>
 
 # Bibtex 
