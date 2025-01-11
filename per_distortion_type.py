@@ -215,7 +215,7 @@ if __name__ == "__main__":
                 "csvfiles/mjpccd_data_info/test_" + str(k_fold_id) + ".csv"
             )
         checkpoint_name = f"{database}_Fold_{fold}Dis_1Loc_1Epo_100BS_4Method_E4_with_dep_norModality_bothAttention_1_best_model.pth"
-        checkpoint_file = os.path.join("/home/xuemei/metrics/local-global-pcqa/ckpts/Main_result/",database, checkpoint_name)
+        checkpoint_file = os.path.join("/ckpts/Main_result/",database, checkpoint_name)
         # checkpoint_file = os.path.join("ckpts/Main_Result/",database, checkpoint_name)
         
         model = load_checkpoint(checkpoint_file, _num_class, args)
@@ -334,15 +334,7 @@ if __name__ == "__main__":
                 geo3D_geo2D_attention, \
                 geo3D_geo2D_global_attention)= model(
                     tex_imgs, dep_imgs, nor_imgs, tex_pcs, nor_pcs, pos_pcs
-                )  #xm: I need to re-write the model to get the feature map instead of the mos_output and dts_output
-                    #should I also report the performance for each fold but its already in the log file.
-                    # compute the similarity between the last second feature map and the last feature map
-                    # gradient backpropagation to visualize which part of the attention feature map is important per distortion type
-                # load model once
-                # torch.autograd.backward(loss_total)
-                # X1.grad
-                # print(pc_texture.grad.shape)  # (B, 1024, 6)->(B,1024)
-                # visualize the gradient,based on pc_texture.grad
+                )  
                 cos = torch.nn.CosineSimilarity(dim=1, eps=1e-6)
                 local2all = cos(output_local,fusion_output_local_global)
                 global2all = cos(output_global,fusion_output_local_global)  # why the two vectors get the same similarity? both equal to 1
@@ -397,8 +389,7 @@ if __name__ == "__main__":
                 min_val = attention_array_geo_tex.min().item()
                 max_val = attention_array_geo_tex.max().item()
                 normalized_attentions_geo_tex = (attention_array_geo_tex - min_val) / (max_val - min_val)
-                # sorted_attention_indices = np.argsort(normalized_attentions)[::-1]
-                # sorted_attention_indices_geo_tex = np.argsort(normalized_attentions_geo_tex,descending=True)
+            
                 sorted_attention_indices = scipy.stats.rankdata(-normalized_attentions)
                 sorted_attention_indices_geo_tex = scipy.stats.rankdata(-normalized_attentions_geo_tex)
                 
@@ -407,9 +398,7 @@ if __name__ == "__main__":
                 ranking_geo_tex_attention[:,i] = sorted_attention_indices_geo_tex
                 name_list.append(img_name)
                 distortion_label[i] = dis.item()
-                # # save the raw data
-                # value_all_attention[:,i] = normalized_attentions
-                # value_geo_tex_attention[:,i] = normalized_attentions_geo_tex
+        
             # compute the average ranking of the attention on all the test set
             average_ranking_all_attention = np.mean(ranking_all_attention,axis=1)
             average_ranking_geo_tex_attention = np.mean(ranking_geo_tex_attention,axis=1)
