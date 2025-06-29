@@ -96,7 +96,7 @@ However, each assumption needs to be verified by subjective studies[1]. The simp
 
 # Bibtex 
 -----------
-If you find our code useful code please cite the paper   
+If you find our code useful please cite the paper   
 ```
 @inproceedings{zhou2024deciphering,
   title={Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?},
